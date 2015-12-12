@@ -4,7 +4,7 @@ class RegistrationController < ApplicationController
     if user.save
       render json: {token: user.token}, status: 201
     else
-      render json: {}, status: 422
+      render json: {error: 'Oops. Something went wrong.'}, status: 422
     end
   end
 
